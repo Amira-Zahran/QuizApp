@@ -49,7 +49,6 @@ class _QuestionWidgetState extends State<QuestionWidget> {
   }
 
   Column buildQuestion(Question question){
-    Option? option;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
