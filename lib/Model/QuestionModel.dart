@@ -6,14 +6,16 @@ class Question{
   bool isLocked;
   Option? selectedOption;
   Image? image;
-  String? textt;
+  Image? jar;
+  Image? exit;
 
 
   Question({
     required this.text,
     required this.options,
     required this.image,
-    required this.textt,
+    required this.jar,
+    required this.exit,
     this.isLocked = false,
     this.selectedOption,
 });
@@ -37,7 +39,7 @@ final Questions = [
      const Option(text: 'D', isCorrect: false),
      const Option(text: 'E', isCorrect: false),
   ],
-    image: Image.asset('assets/tetris.png'),textt: 'skd'
+    image: Image.asset('assets/tetris.png'), jar: Image.asset('assets/two.png' ), exit: Image.asset('assets/one.png'),
   ),
   Question(text: 'What comes after "C"?', options: [
     const Option(text: 'A', isCorrect: false),
@@ -45,7 +47,7 @@ final Questions = [
     const Option(text: 'B', isCorrect: false),
     const Option(text: 'C', isCorrect: false),
   ],
-    image: Image.asset('assets/Ttwo.png'), textt: 'skd',
+    image: Image.asset('assets/Ttwo.png'), jar: Image.asset('assets/three.png' ), exit: Image.asset('assets/two.png'),
   ),
   Question(text: 'What comes after "D"?', options: [
     const Option(text: 'A', isCorrect: false),
@@ -53,7 +55,7 @@ final Questions = [
     const Option(text: 'B', isCorrect: false),
     const Option(text: 'C', isCorrect: false),
   ],
-    image: Image.asset('assets/Tthree.png'), textt: 'skd',
+    image: Image.asset('assets/Tthree.png'), jar: Image.asset('assets/four.png' ), exit: Image.asset('assets/three.png'),
   ),
   Question(text: 'What comes after "E"?', options: [
     const Option(text: 'A', isCorrect: false),
@@ -61,7 +63,7 @@ final Questions = [
     const Option(text: 'B', isCorrect: false),
     const Option(text: 'C', isCorrect: false),
   ],
-    image: Image.asset('assets/Tfour.png'),textt: 'skd'
+    image: Image.asset('assets/Tfour.png'), jar: Image.asset('assets/five.png' ), exit: Image.asset('assets/four.png'),
   ),
 ];
 

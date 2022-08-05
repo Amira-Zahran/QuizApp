@@ -1,6 +1,4 @@
 
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 
 import 'Model/QuestionModel.dart';
@@ -27,7 +25,6 @@ class _QuestionWidgetState extends State<QuestionWidget> {
 
   @override
   Widget build(context) {
-    //Questions.length = _questionNumber;
     return Container(
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height,
@@ -35,28 +32,18 @@ class _QuestionWidgetState extends State<QuestionWidget> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          //Image(image: Questions.length),
           Text('Question $_questionNumber',style: const TextStyle(color: Colors.black,fontWeight: FontWeight.bold, ),),
-          //const Divider(thickness: 1, color: Colors.grey,),
           Expanded(child: PageView.builder(
             itemCount: Questions.length,
             controller: _controller,
             physics: const NeverScrollableScrollPhysics(),
             itemBuilder: (context, index){
-              final _question = Questions[index];
-              return buildQuestion(_question);
+              final question = Questions[index];
+              return buildQuestion(question);
             },
           ),),
-
-          Center(child: Container(
-              decoration: BoxDecoration(
-                color: const Color.fromRGBO(255, 132, 80, 1),
-                borderRadius: BorderRadius.circular(16),),
-              width: 80, height: 70,
-              child: Image.asset(_questionNumber == 1 ? 'assets/one.png' : 'assets/tw.png',))),
-          SizedBox(height: 20,),
+          const SizedBox(height: 20,),
           Center(child: buildElevatedButton()),
-          //const Image(image: AssetImage('assets/glass.png'),)
         ],),
     );
   }
@@ -66,7 +53,7 @@ class _QuestionWidgetState extends State<QuestionWidget> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Center(
-          child: Container(
+          child: SizedBox(
             width: 60, height: 60,
             child: question.image,),
         ),
@@ -89,7 +76,19 @@ class _QuestionWidgetState extends State<QuestionWidget> {
             }
           },
         )),
-        SizedBox(height: 20,),
+        const SizedBox(height: 20,),
+        Center(
+          child: Container(
+              decoration: BoxDecoration(
+                color: const Color.fromRGBO(255, 132, 80, 1),
+                borderRadius: BorderRadius.circular(16),),
+              width: 80, height: 60,
+            // ignore: unnecessary_null_comparison
+            child: question.selectedOption!.isCorrect
+                  ? question.jar
+                  : question.exit,
+            )
+          ),
       ],
     );
   }
@@ -101,15 +100,15 @@ class _QuestionWidgetState extends State<QuestionWidget> {
         onPressed: () {
           //final isSelected = Option == question.;
             if (_questionNumber < Questions.length) {
-              _controller.nextPage(duration: Duration(milliseconds: 250),
+              _controller.nextPage(duration: const Duration(milliseconds: 250),
                   curve: Curves.easeInExpo
               );
               setState(() {
                 _questionNumber++;
               });
             }
-          }, child: Text('Next', style: TextStyle(color: Colors.white),))
-        : Text('') ;
+          }, child: const Text('Next', style: TextStyle(color: Colors.white),))
+        : const Text('') ;
   }
 
 }

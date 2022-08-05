@@ -8,7 +8,7 @@ class OptionsWidget extends StatefulWidget {
 
   //final ValueChanged<Image> image;
 
-  OptionsWidget({Key? key, required this.question, required this.onClickedOption}) : super(key: key);
+  const OptionsWidget({Key? key, required this.question, required this.onClickedOption}) : super(key: key);
 
   @override
   State<OptionsWidget> createState() => _OptionsWidgetState();

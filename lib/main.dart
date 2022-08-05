@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_app_task2/Model/QuestionModel.dart';
 
 import 'Questions.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  MyApp({Key? key}) : super(key: key);
+  const MyApp({Key? key}) : super(key: key);
 
-  var image;
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
