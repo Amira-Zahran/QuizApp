@@ -49,6 +49,7 @@ class _QuestionWidgetState extends State<QuestionWidget> {
   }
 
   Column buildQuestion(Question question){
+    question.image = question.image;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -84,16 +85,22 @@ class _QuestionWidgetState extends State<QuestionWidget> {
                 borderRadius: BorderRadius.circular(16),),
               width: 80, height: 60,
             // ignore: unnecessary_null_comparison
-            child: Stack(children:[
+            child: /*Stack(children:[
               question.selectedOption?.isCorrect == true
               ? Container(child: Center(
                 child: SizedBox(
-                    width: 30, height: 30,
+                    width: 20, height: 20,
                     child: question.image),
               ))
               : Text(''),
+
               Container(child: Center(child: Image.asset('assets/one.png'))),
-            ])),
+
+            ])*/
+            question.selectedOption?.isCorrect == true
+                ? question.jar
+                : question.assh
+          ),
           ),
       ],
     );
