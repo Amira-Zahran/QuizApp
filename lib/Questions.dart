@@ -85,8 +85,8 @@ class _QuestionWidgetState extends State<QuestionWidget> {
               width: 80, height: 60,
             // ignore: unnecessary_null_comparison
             child: question.selectedOption!.isCorrect
-                  ? question.jar
-                  : question.exit,
+                  ? question.exit
+                  : question.jar,
             )
           ),
       ],
