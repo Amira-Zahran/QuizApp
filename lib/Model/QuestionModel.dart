@@ -7,7 +7,8 @@ class Question {
   Option? selectedOption;
   Image? image;
   Image? jar;
-  Image? exit;
+  Image? tru;
+  Image? assh;
 
 
   Question({
@@ -15,7 +16,8 @@ class Question {
     required this.options,
     required this.image,
     required this.jar,
-    required this.exit,
+    required this.tru,
+    required this.assh,
     this.isLocked = false,
     this.selectedOption,
 });
@@ -39,7 +41,7 @@ final Questions = [
      const Option(text: 'D', isCorrect: false),
      const Option(text: 'E', isCorrect: false),
   ],
-    image: Image.asset('assets/tetris.png'), jar: Image.asset('assets/two.png' ), exit: Image.asset('assets/one.png'),
+    image: Image.asset('assets/tetris.png'), jar: Image.asset('assets/two.png' ), assh: Image.asset('assets/one.png'), tru: Image.asset(''),
   ),
   Question(text: 'What comes after "C"?', options: [
     const Option(text: 'A', isCorrect: false),
@@ -47,7 +49,7 @@ final Questions = [
     const Option(text: 'B', isCorrect: false),
     const Option(text: 'C', isCorrect: false),
   ],
-    image: Image.asset('assets/Ttwo.png'), jar: Image.asset('assets/three.png' ), exit: Image.asset('assets/two.png'),
+    image: Image.asset('assets/Ttwo.png'), jar: Image.asset('assets/three.png' ), assh: Image.asset('assets/two.png'),tru: Image.asset('assets/one.png'),
   ),
   Question(text: 'What comes after "D"?', options: [
     const Option(text: 'A', isCorrect: false),
@@ -55,7 +57,7 @@ final Questions = [
     const Option(text: 'B', isCorrect: false),
     const Option(text: 'C', isCorrect: false),
   ],
-    image: Image.asset('assets/Tthree.png'), jar: Image.asset('assets/four.png' ), exit: Image.asset('assets/three.png'),
+    image: Image.asset('assets/Tthree.png'), jar: Image.asset('assets/four.png' ), assh: Image.asset('assets/three.png'), tru: Image.asset('assets/two.png'),
   ),
   Question(text: 'What comes after "E"?', options: [
     const Option(text: 'A', isCorrect: false),
@@ -63,7 +65,7 @@ final Questions = [
     const Option(text: 'B', isCorrect: false),
     const Option(text: 'C', isCorrect: false),
   ],
-    image: Image.asset('assets/Tfour.png'), jar: Image.asset('assets/five.png' ), exit: Image.asset('assets/four.png'),
+    image: Image.asset('assets/Tfour.png'), jar: Image.asset('assets/five.png' ), assh: Image.asset('assets/four.png'), tru: Image.asset('assets/three.png'),
   ),
 ];
 

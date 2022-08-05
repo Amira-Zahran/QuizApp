@@ -84,11 +84,16 @@ class _QuestionWidgetState extends State<QuestionWidget> {
                 borderRadius: BorderRadius.circular(16),),
               width: 80, height: 60,
             // ignore: unnecessary_null_comparison
-            child: question.selectedOption?.isCorrect == true
-                  ? question.jar
-                  : question.exit,
-
-            )
+            child: Stack(children:[
+              question.selectedOption?.isCorrect == true
+              ? Container(child: Center(
+                child: SizedBox(
+                    width: 30, height: 30,
+                    child: question.image),
+              ))
+              : Text(''),
+              Container(child: Center(child: Image.asset('assets/one.png'))),
+            ])),
           ),
       ],
     );
