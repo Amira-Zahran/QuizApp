@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class Question{
+class Question {
   final String text;
   final List<Option> options;
   bool isLocked;
@@ -27,7 +27,7 @@ class Option {
 
   const Option ({
     required this.text,
-    required this.isCorrect
+    required this.isCorrect,
 
   });
 }

@@ -84,9 +84,9 @@ class _QuestionWidgetState extends State<QuestionWidget> {
                 borderRadius: BorderRadius.circular(16),),
               width: 80, height: 60,
             // ignore: unnecessary_null_comparison
-            child: question.selectedOption!.isCorrect
-                  ? question.exit
-                  : question.jar,
+            child: (question.selectedOption?.isCorrect != null)
+                  ? question.jar
+                  : question.exit,
             )
           ),
       ],
